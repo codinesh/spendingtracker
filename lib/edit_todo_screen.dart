@@ -40,6 +40,7 @@ class _EditTodoScreenState extends State<EditTodoScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var checkboxValue = true;
     return Scaffold(
       appBar: AppBar(title: Text(ArchSampleLocalizations.of(context).editTodo)),
       body: Form(
@@ -68,6 +69,12 @@ class _EditTodoScreenState extends State<EditTodoScreen> {
                   hintText: ArchSampleLocalizations.of(context).notesHint,
                 ),
                 maxLines: 10,
+              ),
+              Checkbox(
+                value: checkboxValue,
+                hoverColor: Colors.red,
+                tristate: true,
+                onChanged: (_) => DateTime.now().second % 2 == 0,
               )
             ],
           ),
